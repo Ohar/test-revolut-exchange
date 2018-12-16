@@ -1,4 +1,18 @@
+@width: 335px;
+
 .App {
   background-color: #2185e5;
-  width: 335px;
+  width: @width;
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: @width;
+    height: 681px;
+    top: 0;
+    left: 100%;
+    background-image: url(/static/img/design-example.png);
+  }
 }

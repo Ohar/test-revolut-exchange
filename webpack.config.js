@@ -3,6 +3,7 @@ const webpack            = require('webpack')
 const BrowserSyncPlugin  = require('browser-sync-webpack-plugin')
 const ExtractTextPlugin  = require('extract-text-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const CopyWebpackPlugin  = require('copy-webpack-plugin')
 
 const {author, name: title, description, homepage, version} = require('./package.json')
 
@@ -12,6 +13,10 @@ const plugins = {
   common: [
     new webpack.DefinePlugin({__DEV__}),
     new ExtractTextPlugin('[name].css'),
+    new CopyWebpackPlugin([{
+      from: path.join(__dirname, '/static/'),
+      to  : path.join(__dirname, '/dist/static/'),
+    }]),
   ],
 
   dev: [

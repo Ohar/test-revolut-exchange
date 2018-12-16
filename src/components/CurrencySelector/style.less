@@ -2,10 +2,23 @@
 
 .CurrencySelector {
   position: relative;
+  width: @App_width;
+  background-color: rosybrown;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.CurrencySelector_list {
+  position: relative;
   display: flex;
   width: 3 * @App_width; // TODO: use currency quantity instead of magic number “3”
-  background-color: rosybrown;
+  background-color: darkgreen;
   margin-bottom: 0;
   padding-left: 0;
   transition: transform @screen_toggle_time;
+}
+
+.CurrencySelector_indicator {
+  background-color: forestgreen;
 }

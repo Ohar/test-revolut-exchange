@@ -1,19 +1,12 @@
-import * as actionTypes from '@/store/currency/action-types'
-import DEFAULT_STATE from '@/store/currency/default_state'
+import * as actionTypes from '@/store/account/action-types'
+import DEFAULT_STATE from '@/store/account/default_state'
 
-export default function dataReducer (state = DEFAULT_STATE, action) {
+export default function accountReducer (state = DEFAULT_STATE, action) {
   switch (action.type) {
-    case actionTypes.CURRENCY_FROM_SET: {
+    case actionTypes.MONEY_SET: {
       return {
         ...state,
-        from: action.currency,
-      }
-    }
-
-    case actionTypes.CURRENCY_TO_SET: {
-      return {
-        ...state,
-        to: action.currency,
+        [action.currency]: action.quantity,
       }
     }
 

@@ -1,11 +1,12 @@
 import currencyList from '@/consts/currencyList'
+import AccountInfo from '@/components/AccountInfo'
 import currencySelectorStates from '@/consts/currencySelectorStates'
 import actionCurrencyFromSet from '@/store/currency/actions/currency-from-set'
 import actionCurrencyToSet from '@/store/currency/actions/currency-to-set'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import './style.less'
 import { bindActionCreators } from 'redux'
+import './style.less'
 
 class CurrencyScreen extends Component {
   constructor () {
@@ -17,38 +18,38 @@ class CurrencyScreen extends Component {
   }
 
   changeCurrency (currencyIndex) {
-    const {type, currencyFromSet, currencyToSet}  = this.props
-    const changer = type === currencySelectorStates.from
-                    ? currencyFromSet
-                    : currencyToSet
+    const {type, currencyFromSet, currencyToSet} = this.props
+    const changer                                = type === currencySelectorStates.from
+                                                   ? currencyFromSet
+                                                   : currencyToSet
 
     changer(currencyList[currencyIndex])
   }
 
   toNextCurrency () {
-    const {currency}  = this.props
+    const {currency}   = this.props
     const currentIndex = currencyList.indexOf(currency)
-    const nextIndex = currentIndex === currencyList.length - 1
-                      ? 0
-                      : currentIndex + 1
+    const nextIndex    = currentIndex === currencyList.length - 1
+                         ? 0
+                         : currentIndex + 1
 
     this.changeCurrency(nextIndex)
   }
 
   toPrevCurrency () {
-    const {currency}  = this.props
+    const {currency}   = this.props
     const currentIndex = currencyList.indexOf(currency)
-    const prevIndex = currentIndex === 0
-                      ? currencyList.length - 1
-                      : currentIndex - 1
+    const prevIndex    = currentIndex === 0
+                         ? currencyList.length - 1
+                         : currentIndex - 1
 
     this.changeCurrency(prevIndex)
   }
 
   render () {
-    const {currency, type}  = this.props
-    const current = this.props[type] // “from” or “to”
-    const isActive = currency === current
+    const {currency, type} = this.props
+    const current                   = this.props[type] // “from” or “to”
+    const isActive                  = currency === current
 
     return (
       <li className='CurrencyScreen'>
@@ -65,6 +66,8 @@ class CurrencyScreen extends Component {
           ? <button onClick={this.toNextCurrency}>→</button>
           : null
         }
+
+        <AccountInfo currency={currency}/>
       </li>
     )
   }

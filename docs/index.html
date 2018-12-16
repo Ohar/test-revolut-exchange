@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>netronix-test</title>
+    <link rel="stylesheet" type="text/css" href="app.css">
+    <style>
+        body {
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .Main {
+            width: 75rem;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .Header::first-letter,
+        .Description::first-letter {
+            text-transform: uppercase;
+        }
+
+        .Header,
+        .Description,
+        .Footer {
+            text-align: center;
+        }
+
+        .Header {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .Description {
+            font-size: 2rem;
+        }
+
+        .Content {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<main class="Main">
+    <header class="Header">netronix-test v.0.0.1</header>
+    <p class="Description">Test task for Netronix</p>
+
+    <section class="Content" id="react-app">
+        App is loading…
+    </section>
+
+    <footer class="Footer">
+        <p>Pavel Lysenko &lt;code@ohar.name&gt;</p>
+        <p>
+            <a href="https://github.com/Ohar/Netronix-test.git" target="_blank">
+                Github
+            </a>
+        </p>
+    </footer>
+
+    <script src="bundle.js"></script>
+</main>
+</body>
+</html>

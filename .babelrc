@@ -1,0 +1,19 @@
+{
+  "presets": ["env", "react", "stage-2"],
+  "env": {
+    "test": {
+      "plugins": [
+        [
+          "babel-plugin-webpack-loaders",
+          {
+            "config": "./webpack/mocha.js",
+            "verbose": false
+          }
+        ],
+        [ "babel-plugin-webpack-alias", { "config": "./webpack/base.js" } ],
+        "syntax-object-rest-spread",
+        "transform-object-rest-spread"
+      ]
+    }
+  }
+}

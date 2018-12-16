@@ -1,0 +1,53 @@
+{
+  "name": "test-revolut-exchange",
+  "version": "0.0.1",
+  "description": "Test task for Revolut bank",
+  "main": "dist/index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ohar/test-revolut-exchange.git"
+  },
+  "author": "Pavel Lysenko aka Ohar <code@ohar.name>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ohar/test-revolut-exchange/issues"
+  },
+  "homepage": "https://github.com/Ohar/test-revolut-exchange#readme",
+  "scripts": {
+    "build": "cross-env DEV=false webpack && echo 'Builded'",
+    "dev": "cross-env DEV=true webpack"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.14.0",
+    "babel-loader": "7.1.0",
+    "babel-plugin-syntax-object-rest-spread": "^6.13.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "browser-sync": "^2.15.0",
+    "browser-sync-webpack-plugin": "^1.1.2",
+    "clean-webpack-plugin": "^0.1.16",
+    "cross-env": "^5.0.1",
+    "css-loader": "^0.28.0",
+    "ejs-webpack-loader": "^2.2.2",
+    "extract-loader": "^3.0.0",
+    "extract-text-webpack-plugin": "3.0.0",
+    "file-loader": "^2.0.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "postcss-loader": "^1.3.3",
+    "webpack": "3.12.0"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "react": "^15.5.3",
+    "react-dom": "^15.5.3",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
+  }
+}

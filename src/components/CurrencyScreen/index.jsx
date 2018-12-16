@@ -48,13 +48,23 @@ class CurrencyScreen extends Component {
   render () {
     const {currency, type}  = this.props
     const current = this.props[type] // “from” or “to”
+    const isActive = currency === current
 
     return (
       <li className='CurrencyScreen'>
-        <button onClick={this.toPrevCurrency}>←</button>
+        {
+          isActive
+          ? <button onClick={this.toPrevCurrency}>←</button>
+          : null
+        }
+
         {currency}
-        {currency === current ? '+' : '-'}
-        <button onClick={this.toNextCurrency}>→</button>
+
+        {
+          isActive
+          ? <button onClick={this.toNextCurrency}>→</button>
+          : null
+        }
       </li>
     )
   }

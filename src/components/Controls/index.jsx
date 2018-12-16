@@ -9,7 +9,11 @@ class Controls extends Component {
   render () {
     return (
       <section className='Controls'>
-        Controls
+        <button>Cancel</button>
+        <select>
+          <option>£1 = €1.3444</option>
+        </select>
+        <button>Exchange</button>
       </section>
     )
   }

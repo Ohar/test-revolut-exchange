@@ -1,17 +1,18 @@
-import currencySymbolList from '@/consts/currencySymbolList'
+import Money from '@/components/Money'
 import React from 'react'
 import { connect } from 'react-redux'
 import './style.less'
 
-const CENTS_KOEF = 100
-
 function AccountInfo ({account, currency}) {
-  const money  = account[currency] / CENTS_KOEF
-  const symbol = currencySymbolList[currency]
+  const cents = account[currency]
 
   return (
     <span className='AccountInfo'>
-      You have {symbol} {money}
+      You have
+      <Money
+        cents={cents}
+        currency={currency}
+      />
     </span>
   )
 }

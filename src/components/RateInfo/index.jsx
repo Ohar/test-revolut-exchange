@@ -1,29 +1,28 @@
 import Money from '@/components/Money'
-import currencySelectorStates from '@/consts/currencySelectorStates'
 import React from 'react'
 import { connect } from 'react-redux'
 import './style.less'
 
 const CENTS_FROM = 100
 
-function RateInfo (props) {
-  const currencyFrom = props[currencySelectorStates.from]
-  const currencyTo = props[currencySelectorStates.to]
-  const rateFrom = props.rate[currencyFrom]
-  const rateTo = props.rate[currencyTo]
-  const rate = rateTo / rateFrom
-  const centsTO = rate * CENTS_FROM
+function RateInfo ({currencyFrom, currencyTo, rate, reverse = false}) {
+  const rateFrom          = reverse ? rate[currencyTo] : rate[currencyFrom]
+  const rateTo            = reverse ? rate[currencyFrom] : rate[currencyTo]
+  const currencyFromFixed = reverse ? currencyTo : currencyFrom
+  const currencyToFixed   = reverse ? currencyFrom : currencyTo
+  const rateKoef          = rateTo / rateFrom
+  const centsTO           = rateKoef * CENTS_FROM
 
   return (
     <div className='RateInfo'>
       <Money
         cents={CENTS_FROM}
-        currency={currencyFrom}
+        currency={currencyFromFixed}
       />
       =
       <Money
         cents={centsTO}
-        currency={currencyTo}
+        currency={currencyToFixed}
       />
     </div>
   )
@@ -32,9 +31,9 @@ function RateInfo (props) {
 function mapStateToProps (state, ownProps) {
   return {
     ...ownProps,
-    [currencySelectorStates.from]: state.currencyState.from,
-    [currencySelectorStates.to]  : state.currencyState.to,
-    rate  : state.rateState,
+    currencyFrom: state.currencyState.from,
+    currencyTo  : state.currencyState.to,
+    rate        : state.rateState,
   }
 }
 

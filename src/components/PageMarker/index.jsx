@@ -10,12 +10,13 @@ function PageMarker (props) {
   const isActive         = currency === activeCurrency
 
   return (
-    <span
-      className={classNames(
-        'PageMarker',
-      )}
-    >
-      {isActive ? '+' : '-'}
+    <span className={classNames(
+      'PageMarker',
+      {
+        'PageMarker-active': isActive,
+      }
+    )}>
+      ●
     </span>
   )
 }

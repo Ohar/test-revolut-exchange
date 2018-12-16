@@ -1,6 +1,11 @@
-.PageIndicator {
-  background-color: orangered;
-  display: flex;
-  justify-content: space-between;
-  width: 3rem;
+@import "~@/styles/vars";
+
+.PageMarker {
+  color: grey;
+  width: 1rem;
+  transition: color @screen_toggle_time;
+
+  &-active {
+    color: white;
+  }
 }

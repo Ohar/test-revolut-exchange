@@ -1,5 +1,5 @@
-import currencyList from '@/consts/currencyList'
 import AccountInfo from '@/components/AccountInfo'
+import currencyList from '@/consts/currencyList'
 import currencySelectorStates from '@/consts/currencySelectorStates'
 import actionCurrencyFromSet from '@/store/currency/actions/currency-from-set'
 import actionCurrencyToSet from '@/store/currency/actions/currency-to-set'
@@ -48,8 +48,8 @@ class CurrencyScreen extends Component {
 
   render () {
     const {currency, type} = this.props
-    const current                   = this.props[type] // “from” or “to”
-    const isActive                  = currency === current
+    const current          = this.props[type] // “from” or “to”
+    const isActive         = currency === current
 
     return (
       <li className='CurrencyScreen'>

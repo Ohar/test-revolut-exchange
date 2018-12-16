@@ -1,4 +1,5 @@
 import AccountInfo from '@/components/AccountInfo'
+import RateInfo from '@/components/RateInfo'
 import currencyList from '@/consts/currencyList'
 import currencySelectorStates from '@/consts/currencySelectorStates'
 import actionCurrencyFromSet from '@/store/currency/actions/currency-from-set'
@@ -68,6 +69,7 @@ class CurrencyScreen extends Component {
         }
 
         <AccountInfo currency={currency}/>
+        <RateInfo/>
       </li>
     )
   }

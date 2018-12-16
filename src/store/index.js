@@ -1,4 +1,4 @@
-import dataReducer from '@/store/data/reducer'
+import rateReducer from '@/store/rate/reducer'
 import currencyReducer from '@/store/currency/reducer'
 import accountReducer from '@/store/account/reducer'
 import { applyMiddleware, combineReducers, createStore } from 'redux'
@@ -7,7 +7,7 @@ import thunk from 'redux-thunk'
 const reducers = combineReducers({
   accountState: accountReducer,
   currencyState: currencyReducer,
-  dataState: dataReducer,
+  rateState: rateReducer,
 })
 
 const store = createStore(

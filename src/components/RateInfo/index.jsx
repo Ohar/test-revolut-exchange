@@ -15,7 +15,7 @@ function RateInfo (props) {
   const centsTO = rate * CENTS_FROM
 
   return (
-    <span className='RateInfo'>
+    <div className='RateInfo'>
       <Money
         cents={CENTS_FROM}
         currency={currencyFrom}
@@ -25,7 +25,7 @@ function RateInfo (props) {
         cents={centsTO}
         currency={currencyTo}
       />
-    </span>
+    </div>
   )
 }
 

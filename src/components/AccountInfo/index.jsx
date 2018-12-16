@@ -7,13 +7,13 @@ function AccountInfo ({account, currency}) {
   const cents = account[currency]
 
   return (
-    <span className='AccountInfo'>
+    <div className='AccountInfo'>
       You have
       <Money
         cents={cents}
         currency={currency}
       />
-    </span>
+    </div>
   )
 }
 

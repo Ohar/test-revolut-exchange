@@ -5,7 +5,7 @@ import './style.less'
 const CENTS_KOEF = 100
 
 export default function Money ({cents, currency}) {
-  const money  = cents / CENTS_KOEF
+  const money  = Math.round(cents) / CENTS_KOEF
   const symbol = currencySymbolList[currency]
 
   return (

@@ -69,7 +69,13 @@ class CurrencyScreen extends Component {
         }
 
         <AccountInfo currency={currency}/>
-        <RateInfo/>
+
+        {
+          type === currencySelectorStates.to
+          ? <RateInfo/>
+          : null
+        }
+
       </li>
     )
   }

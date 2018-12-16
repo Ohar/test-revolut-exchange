@@ -1,4 +1,5 @@
 import AccountInfo from '@/components/AccountInfo'
+import PageIndicator from '@/components/PageIndicator'
 import RateInfo from '@/components/RateInfo'
 import currencyList from '@/consts/currencyList'
 import currencySelectorStates from '@/consts/currencySelectorStates'
@@ -76,6 +77,7 @@ class CurrencyScreen extends Component {
           : null
         }
 
+        <PageIndicator type={type}/>
       </li>
     )
   }

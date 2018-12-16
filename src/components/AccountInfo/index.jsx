@@ -9,6 +9,7 @@ function AccountInfo ({account, currency}) {
   return (
     <div className='AccountInfo'>
       You have
+      &nbsp;
       <Money
         cents={cents}
         currency={currency}

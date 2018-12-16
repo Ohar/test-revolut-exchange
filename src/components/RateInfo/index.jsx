@@ -18,9 +18,7 @@ function RateInfo ({currencyFrom, currencyTo, rate, reverse = false}) {
       <Money
         cents={CENTS_FROM}
         currency={currencyFromFixed}
-      />
-      =
-      <Money
+      /> = <Money
         cents={centsTO}
         currency={currencyToFixed}
       />

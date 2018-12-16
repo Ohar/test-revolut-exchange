@@ -13,6 +13,7 @@ export default function Money ({cents, currency}) {
       <span className='Money_symbol'>
         {symbol}
       </span>
+      &nbsp;
       <span className='Money_quantity'>
         {money}
       </span>

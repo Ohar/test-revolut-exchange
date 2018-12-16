@@ -1,0 +1,3 @@
+export const CURRENCY_FROM_SET = 'CURRENCY_FROM_SET'
+export const CURRENCY_TO_SET = 'CURRENCY_TO_SET'
+

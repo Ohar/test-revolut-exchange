@@ -1,18 +1,13 @@
-import React, { Component } from 'react'
+import CurrencySelector from '@/components/CurrencySelector'
+import currencySelectorStates from '@/consts/currencySelectorStates'
+import React from 'react'
 import './style.less'
 
-class Exchanger extends Component {
-  constructor (...args) {
-    super(...args)
-  }
-
-  render () {
-    return (
-      <section className='Exchanger'>
-        Exchanger
-      </section>
-    )
-  }
+export default function Exchanger () {
+  return (
+    <section className='Exchanger'>
+      <CurrencySelector type={currencySelectorStates.from}/>
+      <CurrencySelector type={currencySelectorStates.to}/>
+    </section>
+  )
 }
-
-export default Exchanger

@@ -6,7 +6,7 @@ import Select from 'react-select'
 import { bindActionCreators } from 'redux'
 import './style.less'
 
-function Controls ({currencySwitch}) {
+function Controls ({currencyFrom, currencyTo, currencySwitch}) {
   const options = [
     {
       value: 'foo',
@@ -17,6 +17,8 @@ function Controls ({currencySwitch}) {
       label: <RateInfo reverse/>,
     },
   ]
+  const isCurrenciesDiffers = currencyFrom !== currencyTo
+  const isExchangeDisabled = !isCurrenciesDiffers
 
   return (
     <section className='Controls'>
@@ -29,7 +31,9 @@ function Controls ({currencySwitch}) {
         onChange={currencySwitch}
       />
 
-      <button>Exchange</button>
+      <button disabled={isExchangeDisabled}>
+        Exchange
+      </button>
     </section>
   )
 }
@@ -43,5 +47,13 @@ function mapDispatchToProps (dispatch) {
   )
 }
 
-export default connect(null, mapDispatchToProps)(Controls)
+function mapStateToProps (state, ownProps) {
+  return {
+    ...ownProps,
+    currencyFrom: state.currencyState.from,
+    currencyTo  : state.currencyState.to,
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Controls)
 

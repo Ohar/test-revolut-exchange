@@ -17,11 +17,25 @@ class MoneyInput extends Component {
 
     this.onChange = this.onChange.bind(this)
 
-    const {type} = this.props
-
     this.state = {
-      isActive: type === currencySelectorStates.from,
+      isActive: false,
     }
+  }
+
+  componentWillMount () {
+    this.updateActivity(this.props.type)
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (this.props.type !== nextProps.type) {
+      this.updateActivity(nextProps.type)
+    }
+  }
+
+  updateActivity (type) {
+    this.setState({
+      isActive: type === currencySelectorStates.from,
+    })
   }
 
   onChange ({target: {value: quantity}}) {

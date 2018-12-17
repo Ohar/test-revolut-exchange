@@ -4,6 +4,7 @@ import actionCurrencyToSet from '@/store/currency/actions/currency-to-set'
 import actionMoneyFromSet from '@/store/currency/actions/money-from-set'
 import actionMoneyToSet from '@/store/currency/actions/money-to-set'
 import React, { Component } from 'react'
+import classNames from 'classnames'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import './style.less'
@@ -24,15 +25,8 @@ class MoneyInput extends Component {
   }
 
   onChange ({target: {value: quantity}}) {
-    const {moneyFromSet, moneyToSet} = this.props
-    const {isActive}                 = this.state
-
     if (moneyRegexp.test(quantity)) {
-      const handler = isActive
-                      ? moneyFromSet
-                      : moneyToSet
-
-      handler(quantity)
+      this.props.moneyFromSet(quantity)
     }
   }
 
@@ -45,12 +39,13 @@ class MoneyInput extends Component {
                       : moneyTo
 
     return (
-      <span className='MoneyInput'>
+      <div className={classNames(
+        'MoneyInput',
         {
-          isActive
-          ? '−'
-          : '+'
+          'MoneyInput-from': isActive,
+          'MoneyInput-to': !isActive,
         }
+      )}>
         {
           isActive
           ? (
@@ -60,9 +55,13 @@ class MoneyInput extends Component {
               onChange={this.onChange}
             />
           )
-          : <span className='MoneyInput_field'>{moneyData}</span>
+          : (
+            <span className='MoneyInput_field'>
+              {moneyData}
+            </span>
+          )
         }
-      </span>
+      </div>
     )
   }
 }

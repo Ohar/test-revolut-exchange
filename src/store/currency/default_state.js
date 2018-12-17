@@ -1,6 +1,8 @@
 const DATA_DEFAULT_STATE = {
-  from: 'GBP',
-  to: 'EUR',
+  currencyFrom: 'GBP',
+  currencyTo: 'EUR',
+  moneyFrom: '',
+  moneyTo: '',
 }
 
 export default DATA_DEFAULT_STATE

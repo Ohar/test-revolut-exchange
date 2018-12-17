@@ -29,8 +29,8 @@ function RateInfo ({currencyFrom, currencyTo, rate, reverse = false}) {
 function mapStateToProps (state, ownProps) {
   return {
     ...ownProps,
-    currencyFrom: state.currencyState.from,
-    currencyTo  : state.currencyState.to,
+    currencyFrom: state.currencyState.currencyFrom,
+    currencyTo  : state.currencyState.currencyTo,
     rate        : state.rateState,
   }
 }

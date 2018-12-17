@@ -1,4 +1,5 @@
 import AccountInfo from '@/components/AccountInfo'
+import MoneyInput from '@/components/MoneyInput'
 import RateInfo from '@/components/RateInfo'
 import currencyList from '@/consts/currencyList'
 import currencySelectorStates from '@/consts/currencySelectorStates'
@@ -68,6 +69,8 @@ class CurrencyScreen extends Component {
           : null
         }
 
+        <MoneyInput type={type}/>
+
         <AccountInfo currency={currency}/>
 
         {
@@ -93,8 +96,8 @@ function mapDispatchToProps (dispatch) {
 function mapStateToProps (state, ownProps) {
   return {
     ...ownProps,
-    [currencySelectorStates.from]: state.currencyState.from,
-    [currencySelectorStates.to]  : state.currencyState.to,
+    [currencySelectorStates.from]: state.currencyState.currencyFrom,
+    [currencySelectorStates.to]  : state.currencyState.currencyTo,
   }
 }
 

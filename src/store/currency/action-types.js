@@ -1,4 +1,6 @@
 export const CURRENCY_SWITCH = 'CURRENCY_SWITCH'
 export const CURRENCY_FROM_SET = 'CURRENCY_FROM_SET'
 export const CURRENCY_TO_SET = 'CURRENCY_TO_SET'
+export const MONEY_FROM_SET = 'MONEY_FROM_SET'
+export const MONEY_TO_SET = 'MONEY_TO_SET'
 

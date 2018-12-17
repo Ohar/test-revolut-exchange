@@ -41,8 +41,8 @@ function CurrencySelector (props) {
 function mapStateToProps (state, ownProps) {
   return {
     ...ownProps,
-    [currencySelectorStates.from]: state.currencyState.from,
-    [currencySelectorStates.to]  : state.currencyState.to,
+    [currencySelectorStates.from]: state.currencyState.currencyFrom,
+    [currencySelectorStates.to]  : state.currencyState.currencyTo,
   }
 }
 

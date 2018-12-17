@@ -6,22 +6,36 @@ export default function dataReducer (state = DEFAULT_STATE, action) {
     case actionTypes.CURRENCY_FROM_SET: {
       return {
         ...state,
-        from: action.currency,
+        currencyFrom: action.currency,
       }
     }
 
     case actionTypes.CURRENCY_TO_SET: {
       return {
         ...state,
-        to: action.currency,
+        currencyTo: action.currency,
       }
     }
 
     case actionTypes.CURRENCY_SWITCH: {
       return {
         ...state,
-        from: state.to,
-        to  : state.from,
+        currencyFrom: state.currencyTo,
+        currencyTo  : state.currencyFrom,
+      }
+    }
+
+    case actionTypes.MONEY_FROM_SET: {
+      return {
+        ...state,
+        moneyFrom: action.moneyFrom,
+      }
+    }
+
+    case actionTypes.MONEY_TO_SET: {
+      return {
+        ...state,
+        moneyTo: action.moneyTo,
       }
     }
 

@@ -50,8 +50,8 @@ function mapDispatchToProps (dispatch) {
 function mapStateToProps (state, ownProps) {
   return {
     ...ownProps,
-    currencyFrom: state.currencyState.from,
-    currencyTo  : state.currencyState.to,
+    currencyFrom: state.currencyState.currencyFrom,
+    currencyTo  : state.currencyState.currencyTo,
   }
 }
 

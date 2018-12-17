@@ -1,6 +1,6 @@
-import rateReducer from '@/store/rate/reducer'
-import currencyReducer from '@/store/currency/reducer'
 import accountReducer from '@/store/account/reducer'
+import currencyReducer from '@/store/currency/reducer'
+import rateReducer from '@/store/rate/reducer'
 import { applyMiddleware, combineReducers, createStore } from 'redux'
 import thunk from 'redux-thunk'
 

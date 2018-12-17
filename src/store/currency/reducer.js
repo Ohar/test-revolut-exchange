@@ -17,6 +17,14 @@ export default function dataReducer (state = DEFAULT_STATE, action) {
       }
     }
 
+    case actionTypes.CURRENCY_SWITCH: {
+      return {
+        ...state,
+        from: state.to,
+        to  : state.from,
+      }
+    }
+
     default:
       return state
   }

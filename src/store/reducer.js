@@ -27,9 +27,12 @@ export default function dataReducer (state = DEFAULT_STATE, action) {
     }
 
     case actionTypes.MONEY_FROM_SET: {
+      const maxMoneyFrom = state.account[state.currencyFrom]
+      const moneyFrom = Math.min(action.moneyFrom, maxMoneyFrom)
+
       return {
         ...state,
-        moneyFrom: action.moneyFrom,
+        moneyFrom,
       }
     }
 

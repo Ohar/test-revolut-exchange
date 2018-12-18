@@ -1,13 +1,14 @@
 import RateInfo from '@/components/RateInfo'
 import actionCurrencySwitch from '@/store/actions/currency-switch'
+import actionExchangeExecute from '@/store/actions/exchange-execute'
 import React from 'react'
 import connect from 'react-redux/es/connect/connect'
 import Select from 'react-select'
 import { bindActionCreators } from 'redux'
 import './style.less'
 
-function Controls ({currencyFrom, currencyTo, currencySwitch}) {
-  const options = [
+function Controls ({currencyFrom, currencyTo, currencySwitch, exchangeExecute}) {
+  const options             = [
     {
       value: 'foo',
       label: <RateInfo/>,
@@ -18,7 +19,7 @@ function Controls ({currencyFrom, currencyTo, currencySwitch}) {
     },
   ]
   const isCurrenciesDiffers = currencyFrom !== currencyTo
-  const isExchangeDisabled = !isCurrenciesDiffers
+  const isExchangeDisabled  = !isCurrenciesDiffers
 
   return (
     <section className='Controls'>
@@ -31,7 +32,10 @@ function Controls ({currencyFrom, currencyTo, currencySwitch}) {
         onChange={currencySwitch}
       />
 
-      <button disabled={isExchangeDisabled}>
+      <button
+        disabled={isExchangeDisabled}
+        onClick={exchangeExecute}
+      >
         Exchange
       </button>
     </section>
@@ -41,7 +45,8 @@ function Controls ({currencyFrom, currencyTo, currencySwitch}) {
 function mapDispatchToProps (dispatch) {
   return bindActionCreators(
     {
-      currencySwitch: actionCurrencySwitch,
+      currencySwitch : actionCurrencySwitch,
+      exchangeExecute: actionExchangeExecute,
     },
     dispatch,
   )

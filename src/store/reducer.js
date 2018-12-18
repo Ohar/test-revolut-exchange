@@ -54,10 +54,16 @@ export default function dataReducer (state = DEFAULT_STATE, action) {
       }
     }
 
-    case actionTypes.MONEY_SET: {
+    case actionTypes.EXCHANGE_EXECUTE: {
       return {
         ...state,
-        account: action.account,
+        moneyFrom: DEFAULT_STATE.moneyFrom,
+        moneyTo: DEFAULT_STATE.moneyTo,
+        account: {
+          ...state.account,
+          [state.currencyFrom]: state.account[state.currencyFrom] - state.moneyFrom,
+          [state.currencyTo]: state.account[state.currencyTo] + state.moneyTo,
+        },
       }
     }
 

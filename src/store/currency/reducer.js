@@ -39,6 +39,16 @@ export default function dataReducer (state = DEFAULT_STATE, action) {
       }
     }
 
+    case actionTypes.RATE_SET: {
+      return {
+        ...state,
+        rate: {
+          ...state.rate,
+          rate: action.rate,
+        },
+      }
+    }
+
     default:
       return state
   }

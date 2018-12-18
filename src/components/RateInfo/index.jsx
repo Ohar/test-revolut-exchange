@@ -31,7 +31,7 @@ function mapStateToProps (state, ownProps) {
     ...ownProps,
     currencyFrom: state.currencyState.currencyFrom,
     currencyTo  : state.currencyState.currencyTo,
-    rate        : state.rateState,
+    rate        : state.currencyState.rate,
   }
 }
 

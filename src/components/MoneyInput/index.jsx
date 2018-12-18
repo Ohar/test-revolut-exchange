@@ -2,7 +2,6 @@ import currencySelectorStates from '@/consts/currencySelectorStates'
 import actionCurrencyFromSet from '@/store/currency/actions/currency-from-set'
 import actionCurrencyToSet from '@/store/currency/actions/currency-to-set'
 import actionMoneyFromSet from '@/store/currency/actions/money-from-set'
-import actionMoneyToSet from '@/store/currency/actions/money-to-set'
 import React, { Component } from 'react'
 import classNames from 'classnames'
 import { connect } from 'react-redux'
@@ -86,7 +85,6 @@ function mapDispatchToProps (dispatch) {
       currencyFromSet: actionCurrencyFromSet,
       currencyToSet  : actionCurrencyToSet,
       moneyFromSet   : actionMoneyFromSet,
-      moneyToSet     : actionMoneyToSet,
     },
     dispatch,
   )

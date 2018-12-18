@@ -1,7 +1,8 @@
-import { CURRENCY_SWITCH } from '@/store/currency/action-types'
+import { CURRENCY_SWITCH, MONEY_TO_UPDATE } from '@/store/currency/action-types'
 
 export default function actionCurrencySwitch () {
-  return {
-    type: CURRENCY_SWITCH,
+  return dispatch => {
+    dispatch({type: CURRENCY_SWITCH})
+    dispatch({type: MONEY_TO_UPDATE})
   }
 }

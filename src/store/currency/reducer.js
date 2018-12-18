@@ -27,21 +27,20 @@ export default function dataReducer (state = DEFAULT_STATE, action) {
     }
 
     case actionTypes.MONEY_FROM_SET: {
-      const rateFrom = state.rate[state.currencyFrom]
-      const rateTo   = state.rate[state.currencyTo]
-      const moneyTo  = countMoneyTo(action.moneyFrom, rateFrom, rateTo)
-
       return {
         ...state,
-        moneyTo,
         moneyFrom: action.moneyFrom,
       }
     }
 
-    case actionTypes.MONEY_TO_SET: {
+    case actionTypes.MONEY_TO_UPDATE: {
+      const rateFrom = state.rate[state.currencyFrom]
+      const rateTo   = state.rate[state.currencyTo]
+      const moneyTo  = countMoneyTo(state.moneyFrom, rateFrom, rateTo)
+
       return {
         ...state,
-        moneyTo: action.moneyTo,
+        moneyTo,
       }
     }
 

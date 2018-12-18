@@ -1,4 +1,5 @@
 import Money from '@/components/Money'
+import countMoneyTo from '@/utils/countMoneyTo'
 import React from 'react'
 import { connect } from 'react-redux'
 import './style.less'
@@ -10,8 +11,7 @@ function RateInfo ({currencyFrom, currencyTo, rate, reverse = false}) {
   const rateTo            = reverse ? rate[currencyFrom] : rate[currencyTo]
   const currencyFromFixed = reverse ? currencyTo : currencyFrom
   const currencyToFixed   = reverse ? currencyFrom : currencyTo
-  const rateKoef          = rateTo / rateFrom
-  const centsTO           = rateKoef * CENTS_FROM
+  const centsTo           = countMoneyTo(CENTS_FROM, rateFrom, rateTo)
 
   return (
     <div className='RateInfo'>
@@ -19,7 +19,7 @@ function RateInfo ({currencyFrom, currencyTo, rate, reverse = false}) {
         cents={CENTS_FROM}
         currency={currencyFromFixed}
       /> = <Money
-        cents={centsTO}
+        cents={centsTo}
         currency={currencyToFixed}
       />
     </div>

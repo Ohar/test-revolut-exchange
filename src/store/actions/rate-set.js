@@ -1,4 +1,4 @@
-import { MONEY_TO_UPDATE, RATE_SET } from '@/store/currency/action-types'
+import { MONEY_TO_UPDATE, RATE_SET } from '@/store/action-types'
 
 export default function actionRateSet (rate) {
   return dispatch => {

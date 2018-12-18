@@ -1,4 +1,4 @@
-import { CURRENCY_TO_SET, MONEY_TO_UPDATE } from '@/store/currency/action-types'
+import { CURRENCY_TO_SET, MONEY_TO_UPDATE } from '@/store/action-types'
 
 export default function actionCurrencyToSet (currency) {
   return dispatch => {

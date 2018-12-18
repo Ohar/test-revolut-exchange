@@ -21,7 +21,7 @@ function AccountInfo ({account, currency}) {
 function mapStateToProps (state, ownProps) {
   return {
     ...ownProps,
-    account: state.accountState,
+    account: state.currencyState.account,
   }
 }
 

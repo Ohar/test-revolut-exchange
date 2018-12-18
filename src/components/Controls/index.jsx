@@ -1,5 +1,5 @@
 import RateInfo from '@/components/RateInfo'
-import actionCurrencySwitch from '@/store/currency/actions/currency-switch'
+import actionCurrencySwitch from '@/store/actions/currency-switch'
 import React from 'react'
 import connect from 'react-redux/es/connect/connect'
 import Select from 'react-select'

@@ -1,10 +1,8 @@
-import accountReducer from '@/store/account/reducer'
-import currencyReducer from '@/store/currency/reducer'
+import currencyReducer from '@/store/reducer'
 import { applyMiddleware, combineReducers, createStore } from 'redux'
 import thunk from 'redux-thunk'
 
 const reducers = combineReducers({
-  accountState: accountReducer,
   currencyState: currencyReducer,
 })
 

@@ -1,4 +1,9 @@
 const DATA_DEFAULT_STATE = {
+  account: {
+    EUR: 10000,
+    USD: 10000,
+    GBP: 10000,
+  },
   currencyFrom: 'GBP',
   currencyTo: 'EUR',
   moneyFrom: '',

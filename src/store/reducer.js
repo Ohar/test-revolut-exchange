@@ -1,5 +1,5 @@
-import * as actionTypes from '@/store/currency/action-types'
-import DEFAULT_STATE from '@/store/currency/default_state'
+import * as actionTypes from '@/store/action-types'
+import DEFAULT_STATE from '@/store/default_state'
 import countMoneyTo from '@/utils/countMoneyTo'
 
 export default function dataReducer (state = DEFAULT_STATE, action) {
@@ -51,6 +51,13 @@ export default function dataReducer (state = DEFAULT_STATE, action) {
           ...state.rate,
           rate: action.rate,
         },
+      }
+    }
+
+    case actionTypes.MONEY_SET: {
+      return {
+        ...state,
+        account: action.account,
       }
     }
 

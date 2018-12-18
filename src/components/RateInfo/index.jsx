@@ -4,22 +4,22 @@ import React from 'react'
 import { connect } from 'react-redux'
 import './style.less'
 
-const CENTS_FROM = 100
+const MONEY_FROM = 1
 
 function RateInfo ({currencyFrom, currencyTo, rate, reverse = false}) {
   const rateFrom          = reverse ? rate[currencyTo] : rate[currencyFrom]
   const rateTo            = reverse ? rate[currencyFrom] : rate[currencyTo]
   const currencyFromFixed = reverse ? currencyTo : currencyFrom
   const currencyToFixed   = reverse ? currencyFrom : currencyTo
-  const centsTo           = countMoneyTo(CENTS_FROM, rateFrom, rateTo)
+  const moneyTo           = countMoneyTo(MONEY_FROM, rateFrom, rateTo)
 
   return (
     <div className='RateInfo'>
       <Money
-        cents={CENTS_FROM}
+        quantity={MONEY_FROM}
         currency={currencyFromFixed}
       /> = <Money
-        cents={centsTo}
+        quantity={moneyTo}
         currency={currencyToFixed}
       />
     </div>

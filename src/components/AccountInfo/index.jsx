@@ -4,14 +4,14 @@ import { connect } from 'react-redux'
 import './style.less'
 
 function AccountInfo ({account, currency}) {
-  const cents = account[currency]
+  const quantity = account[currency]
 
   return (
     <div className='AccountInfo'>
       You have
       &nbsp;
       <Money
-        cents={cents}
+        quantity={quantity}
         currency={currency}
       />
     </div>

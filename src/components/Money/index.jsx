@@ -4,9 +4,9 @@ import './style.less'
 
 const CENTS_KOEF = 100
 
-export default function Money ({cents, currency}) {
-  const money  = Math.round(cents) / CENTS_KOEF
-  const symbol = currencySymbolList[currency]
+export default function Money ({quantity, currency}) {
+  const quantityFixed = Math.round(quantity * CENTS_KOEF) / CENTS_KOEF
+  const symbol     = currencySymbolList[currency]
 
   return (
     <span className='Money'>
@@ -15,7 +15,7 @@ export default function Money ({cents, currency}) {
       </span>
       &nbsp;
       <span className='Money_quantity'>
-        {money}
+        {quantityFixed}
       </span>
     </span>
   )

@@ -55,21 +55,24 @@ class CurrencyScreen extends Component {
 
     return (
       <li className='CurrencyScreen'>
-        {
-          isActive
-          ? <button onClick={this.toPrevCurrency}>←</button>
-          : null
-        }
+        <span className='CurrencyScreen_mainRow'>
+          <span className='CurrencyScreen_currency'>
+            {
+              isActive
+              ? <button onClick={this.toPrevCurrency}>←</button>
+              : null
+            }
+            {currency}
+            {
+              isActive
+              ? <button onClick={this.toNextCurrency}>→</button>
+              : null
+            }
+          </span>
 
-        {currency}
+          <MoneyInput type={type}/>
 
-        {
-          isActive
-          ? <button onClick={this.toNextCurrency}>→</button>
-          : null
-        }
-
-        <MoneyInput type={type}/>
+        </span>
 
         <AccountInfo currency={currency}/>
 

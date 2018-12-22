@@ -1,4 +1,13 @@
+@import "~@/styles/mixins";
+@import "~@/styles/vars";
+
 .MoneyInput {
+  .font_big();
+
+  &:before {
+    .font_big();
+  }
+
   &-from:before {
     content: '−';
   }
@@ -9,11 +18,9 @@
 }
 
 .MoneyInput_field {
+  .font_big();
   display: inline-block;
-  border: 1px solid green;
+  border: 0 none;
   padding: 0;
-  background-color: transparent;
-  width: 5rem;
-  height: 1rem;
-  box-sizing: content-box;
+  width: 8rem;
 }

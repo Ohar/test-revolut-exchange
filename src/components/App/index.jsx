@@ -1,6 +1,5 @@
 import Controls from '@/components/Controls'
 import Exchanger from '@/components/Exchanger'
-import Keyboard from '@/components/Keyboard'
 import RateUpdater from '@/components/RateUpdater'
 import StatusBar from '@/components/StatusBar'
 import React from 'react'
@@ -13,7 +12,6 @@ export default function App () {
         <StatusBar/>
         <Controls/>
         <Exchanger/>
-        <Keyboard/>
       </RateUpdater>
     </main>
   )

@@ -1,6 +1,7 @@
-import Exchanger from '@/components/Exchanger/index'
-import Controls from '@/components/Controls/index'
-import Keyboard from '@/components/Keyboard/index'
+import Controls from '@/components/Controls'
+import Exchanger from '@/components/Exchanger'
+import Keyboard from '@/components/Keyboard'
+import RateUpdater from '@/components/RateUpdater'
 import StatusBar from '@/components/StatusBar'
 import React from 'react'
 import './style.less'
@@ -8,10 +9,12 @@ import './style.less'
 export default function App () {
   return (
     <main className='App'>
-      <StatusBar/>
-      <Controls/>
-      <Exchanger/>
-      <Keyboard/>
+      <RateUpdater>
+        <StatusBar/>
+        <Controls/>
+        <Exchanger/>
+        <Keyboard/>
+      </RateUpdater>
     </main>
   )
 }

@@ -52,7 +52,7 @@ export default function dataReducer (state = DEFAULT_STATE, action) {
         ...state,
         rate: {
           ...state.rate,
-          rate: action.rate,
+          ...action.rate,
         },
       }
     }

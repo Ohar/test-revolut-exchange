@@ -1,3 +1,3 @@
-const API_URL = 'https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml'
+const API_URL = 'https://ohar.name/api/exchange'
 
 export default API_URL

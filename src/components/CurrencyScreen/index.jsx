@@ -55,7 +55,7 @@ class CurrencyScreen extends Component {
 
     return (
       <li className='CurrencyScreen'>
-        <span className='CurrencyScreen_mainRow'>
+        <span className='CurrencyScreen_row'>
           <span className='CurrencyScreen_currency'>
             {
               isActive
@@ -71,16 +71,17 @@ class CurrencyScreen extends Component {
           </span>
 
           <MoneyInput type={type}/>
-
         </span>
 
-        <AccountInfo currency={currency}/>
+        <span className='CurrencyScreen_row'>
+          <AccountInfo currency={currency}/>
 
-        {
-          type === currencySelectorStates.to
-          ? <RateInfo/>
-          : null
-        }
+          {
+            type === currencySelectorStates.to
+            ? <RateInfo/>
+            : null
+          }
+        </span>
       </li>
     )
   }

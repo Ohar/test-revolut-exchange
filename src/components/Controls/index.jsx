@@ -1,3 +1,4 @@
+import Button from '@/components/Button'
 import RateInfo from '@/components/RateInfo'
 import actionCurrencySwitch from '@/store/actions/currency-switch'
 import actionExchangeExecute from '@/store/actions/exchange-execute'
@@ -23,7 +24,7 @@ function Controls ({currencyFrom, currencyTo, currencySwitch, exchangeExecute}) 
 
   return (
     <section className='Controls'>
-      <button>Cancel</button>
+      <Button>Cancel</Button>
 
       <Select
         className='Controls_select'
@@ -32,12 +33,12 @@ function Controls ({currencyFrom, currencyTo, currencySwitch, exchangeExecute}) 
         onChange={currencySwitch}
       />
 
-      <button
+      <Button
         disabled={isExchangeDisabled}
         onClick={exchangeExecute}
       >
         Exchange
-      </button>
+      </Button>
     </section>
   )
 }

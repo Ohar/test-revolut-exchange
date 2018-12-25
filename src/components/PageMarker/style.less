@@ -1,13 +1,14 @@
 @import "~@/styles/vars";
 
 .PageMarker {
-  color: grey;
-  width: 1rem;
+  @size: .75rem;
+  color: #0691FF;
+  width: @size;
+  font-size: @size;
   transition: color @screen_toggle_time;
   text-align: center;
-  background-color: forestgreen;
 
   &-active {
-    color: white;
+    color: #ECFCFF;
   }
 }

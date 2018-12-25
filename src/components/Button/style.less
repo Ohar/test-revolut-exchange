@@ -1,0 +1,15 @@
+@import "~@/styles/vars";
+
+.Button {
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: @textColor;
+  border-radius: .25rem;
+  transition: border-right-color 1s;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: @textColor;
+  }
+}

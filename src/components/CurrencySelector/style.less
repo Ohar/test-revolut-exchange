@@ -3,17 +3,20 @@
 .CurrencySelector {
   position: relative;
   width: @App_width;
-  background-color: rosybrown;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: linear-gradient(to bottom, #0057DC, #0075FA);
+
+  & + & {
+    background: linear-gradient(to bottom, #005AC7, #004EB9);
+  }
 }
 
 .CurrencySelector_list {
   position: relative;
   display: flex;
   width: 3 * @App_width; // TODO: use currency quantity instead of magic number “3”
-  background-color: darkgreen;
   margin-bottom: 0;
   padding-left: 0;
   transition: transform @screen_toggle_time;

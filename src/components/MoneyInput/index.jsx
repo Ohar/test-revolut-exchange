@@ -66,6 +66,7 @@ class MoneyInput extends Component {
               className='MoneyInput_field'
               value={moneyData}
               onChange={this.onChange}
+              // autoFocus
             />
           )
           : (

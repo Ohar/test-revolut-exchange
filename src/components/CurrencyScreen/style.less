@@ -2,15 +2,20 @@
 @import "~@/styles/vars";
 
 .CurrencyScreen {
-  background-color: tomato;
   list-style-type: none;
   height: @ExchangeBlock_height;
   width: @App_width;
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
 .CurrencyScreen_row {
   display: flex;
   justify-content: space-between;
+
+  & > * {
+    width: 50%;
+  }
 }
 
 .CurrencyScreen_currency {

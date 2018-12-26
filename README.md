@@ -4,6 +4,10 @@ It is solution for Revolut bank [Test task](https://docs.google.com/document/d/1
 
 # How to
 
+## How to watch the demo?
+
+[Demo](https://ohar.github.io/test-revolut-exchange/) is on GitHub pages.
+
 ## How to install?
 
 1. Copy repository files on your computer.

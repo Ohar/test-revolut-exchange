@@ -1,5 +1,6 @@
 import CurrencyScreen from '@/components/CurrencyScreen'
 import PageIndicator from '@/components/PageIndicator'
+import CurrencyChanger from '@/components/CurrencyChanger'
 import currencyList from '@/consts/currencyList'
 import currencySelectorStates from '@/consts/currencySelectorStates'
 import React from 'react'
@@ -34,6 +35,7 @@ function CurrencySelector (props) {
         className='CurrencySelector_indicator'
         type={type}
       />
+      <CurrencyChanger type={type}/>
     </section>
   )
 }

@@ -1,20 +1,16 @@
-import AccountInfo from '@/components/AccountInfo'
-import MoneyInput from '@/components/MoneyInput'
-import RateInfo from '@/components/RateInfo'
 import currencyList from '@/consts/currencyList'
 import currencySelectorStates from '@/consts/currencySelectorStates'
 import actionCurrencyFromSet from '@/store/actions/currency-from-set'
 import actionCurrencyToSet from '@/store/actions/currency-to-set'
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import connect from 'react-redux/es/connect/connect'
 import { bindActionCreators } from 'redux'
 import './style.less'
 
-class CurrencyScreen extends Component {
+class CurrencyChanger extends Component {
   constructor () {
     super()
 
-    this.changeCurrency = this.changeCurrency.bind(this)
     this.toNextCurrency = this.toNextCurrency.bind(this)
     this.toPrevCurrency = this.toPrevCurrency.bind(this)
   }
@@ -29,7 +25,10 @@ class CurrencyScreen extends Component {
   }
 
   toNextCurrency () {
-    const {currency}   = this.props
+    const {type}       = this.props
+    const currency     = type === currencySelectorStates.from
+                         ? this.props[currencySelectorStates.from]
+                         : this.props[currencySelectorStates.to]
     const currentIndex = currencyList.indexOf(currency)
     const nextIndex    = currentIndex === currencyList.length - 1
                          ? 0
@@ -39,7 +38,10 @@ class CurrencyScreen extends Component {
   }
 
   toPrevCurrency () {
-    const {currency}   = this.props
+    const {type}       = this.props
+    const currency     = type === currencySelectorStates.from
+                         ? this.props[currencySelectorStates.from]
+                         : this.props[currencySelectorStates.to]
     const currentIndex = currencyList.indexOf(currency)
     const prevIndex    = currentIndex === 0
                          ? currencyList.length - 1
@@ -49,28 +51,21 @@ class CurrencyScreen extends Component {
   }
 
   render () {
-    const {currency, type} = this.props
-
     return (
-      <li className='CurrencyScreen'>
-        <span className='CurrencyScreen_row'>
-          <span className='CurrencyScreen_currency'>
-            {currency}
-          </span>
-
-          <MoneyInput type={type}/>
-        </span>
-
-        <span className='CurrencyScreen_row'>
-          <AccountInfo currency={currency}/>
-
-          {
-            type === currencySelectorStates.to
-            ? <RateInfo/>
-            : null
-          }
-        </span>
-      </li>
+      <section className='CurrencyChanger'>
+        <button
+          onClick={this.toPrevCurrency}
+          className='CurrencyChanger_btn CurrencyChanger_btn-prev'
+        >
+          ←
+        </button>
+        <button
+          onClick={this.toNextCurrency}
+          className='CurrencyChanger_btn CurrencyChanger_btn-next'
+        >
+          →
+        </button>
+      </section>
     )
   }
 }
@@ -93,4 +88,4 @@ function mapStateToProps (state, ownProps) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CurrencyScreen)
+export default connect(mapStateToProps, mapDispatchToProps)(CurrencyChanger)

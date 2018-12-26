@@ -54,12 +54,14 @@ class CurrencyChanger extends Component {
     return (
       <section className='CurrencyChanger'>
         <button
+          key='prevBtn'
           onClick={this.toPrevCurrency}
           className='CurrencyChanger_btn CurrencyChanger_btn-prev'
         >
           ←
         </button>
         <button
+          key='nextBtn'
           onClick={this.toNextCurrency}
           className='CurrencyChanger_btn CurrencyChanger_btn-next'
         >

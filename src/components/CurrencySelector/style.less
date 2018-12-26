@@ -1,12 +1,13 @@
 @import "~@/styles/vars";
 
 .CurrencySelector {
+  @bottomColor: #0075FA;
   position: relative;
   width: @App_width;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(to bottom, #0057DC, #0075FA);
+  background: linear-gradient(to bottom, #0057DC, @bottomColor);
 
   & + & {
     background: linear-gradient(to bottom, #005AC7, #004EB9);
@@ -17,7 +18,7 @@
     content: '';
     width: 0;
     height: 0;
-    border-color: transparent #0075FA #0075FA transparent;
+    border-color: transparent @bottomColor @bottomColor transparent;
     border-style: solid;
     border-width: @size;
     transform: rotate(45deg);

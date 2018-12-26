@@ -15,7 +15,7 @@ function CurrencySelector (props) {
 
   return (
     <section className='CurrencySelector'>
-      <ul
+      <section
         className='CurrencySelector_list'
         style={{transform: `translateX(${percent}%)`}}
       >
@@ -30,7 +30,7 @@ function CurrencySelector (props) {
             ),
           )
         }
-      </ul>
+      </section>
       <PageIndicator
         className='CurrencySelector_indicator'
         type={type}

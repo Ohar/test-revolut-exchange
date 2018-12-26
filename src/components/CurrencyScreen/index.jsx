@@ -7,7 +7,7 @@ import './style.less'
 
 export default function CurrencyScreen ({currency, type}) {
   return (
-    <li className='CurrencyScreen'>
+    <label className='CurrencyScreen'>
       <span className='CurrencyScreen_row'>
         <span className='CurrencyScreen_currency'>
           {currency}
@@ -25,6 +25,6 @@ export default function CurrencyScreen ({currency, type}) {
           : null
         }
         </span>
-    </li>
+    </label>
   )
 }

@@ -59,21 +59,19 @@ class MoneyInput extends Component {
           'MoneyInput-to': !isActive,
         }
       )}>
+        <span className='MoneyInput_field'>
+          {moneyData}
+        </span>
         {
           isActive
           ? (
             <input
-              className='MoneyInput_field'
+              className='MoneyInput_input'
               value={moneyData}
               onChange={this.onChange}
-              // autoFocus
             />
           )
-          : (
-            <span className='MoneyInput_field'>
-              {moneyData}
-            </span>
-          )
+          : null
         }
       </div>
     )

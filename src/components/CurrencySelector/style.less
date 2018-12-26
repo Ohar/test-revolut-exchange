@@ -11,6 +11,21 @@
   & + & {
     background: linear-gradient(to bottom, #005AC7, #004EB9);
   }
+
+  &:first-child:after {
+    @size: 10px;
+    content: '';
+    width: 0;
+    height: 0;
+    border-color: transparent #0075FA #0075FA transparent;
+    border-style: solid;
+    border-width: @size;
+    transform: rotate(45deg);
+    position: absolute;
+    bottom: -@size;
+    left: calc(50% ~" - " @size);
+    z-index: 2;
+  }
 }
 
 .CurrencySelector_list {
